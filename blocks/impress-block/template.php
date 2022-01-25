@@ -3,7 +3,13 @@
 if (array_key_exists('remoteUrl', $attributes) && $attributes['remoteUrl']) {
     $remoteUrl = $attributes['remoteUrl'];
 
-    $remoteJsonBody = wp_remote_get($remoteUrl)['body'];
+    $remoteJsonBody = wp_cache_get('maltehuebner_impress_json');
+
+    if (!$remoteJsonBody) {
+        $remoteJsonBody = wp_remote_get($remoteUrl)['body'];
+
+        wp_cache_set('maltehuebner_impress_json', $remoteJsonBody, '', 3600);
+    }
 
     $remoteProperties = json_decode($remoteJsonBody);
 
