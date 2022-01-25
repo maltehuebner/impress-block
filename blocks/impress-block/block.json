@@ -1,0 +1,15 @@
+{
+	"apiVersion": 2,
+	"name": "maltehuebner/impress-block",
+	"category": "widgets",
+	"title": "Impress Block",
+	"icon": "grid",
+	"description": "Provide an impress voa remote json data",
+	"textdomain": "maltehuebner-impress",
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:../build/index.js",
+	"editorStyle": "file:../build/index.css.css",
+	"style": "file:../build/index.scss"
+}
